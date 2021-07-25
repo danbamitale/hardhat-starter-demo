@@ -28,7 +28,7 @@ const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "Your etherscan API k
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "your private key"
 
 module.exports = {
-    defaultNetwork: "hardhat",
+    defaultNetwork: "kovan",
     networks: {
         hardhat: {
             // // If you want to do some forking, uncomment this
@@ -40,10 +40,10 @@ module.exports = {
         },
         kovan: {
             url: KOVAN_RPC_URL,
-            // accounts: [PRIVATE_KEY],
-            accounts: {
-                mnemonic: MNEMONIC,
-            },
+            accounts: [PRIVATE_KEY],
+            // accounts: {
+            //     mnemonic: MNEMONIC,
+            // },
             saveDeployments: true,
         },
         rinkeby: {
